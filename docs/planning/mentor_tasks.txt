@@ -1,0 +1,72 @@
+I have a custom platform based on OpenEdX called MENTOR. Please do some deep research on OpenEdX and create me a document to on how to navigate course material, basic overview and anything else that would be helpful to an end user. Do not mention OpenEdX itself, what it is or who it's by but instead focus on being helpful to the user on this custom platform.
+
+Focus on:
+Adaptive Learning
+Rich Variety of Content
+Self-Paced Progress Dashboard
+Powerful Analytics
+
+And also:
+Active community
+Multi-language support
+Interactive lessions
+One-on-one tutor sessions
+Cross-device / cross-platform
+Extensible and inclusive
+
+Todo
+- Setup Custom LLM Model to use Amazon Bedrock: Nova Lite 1.0
+  - Potentially reduces latency from ~250-1250ms to ~70ms.
+  - Allows better performance with Provisioned Throughout to improve latency/reliability.
+  - Allows for more customization with fine-tuning, distillation, guardrails, etc.
+  - Supports knowlege base & document management, embedding, and multimodal features.
+- Supabase integration (add creds to VAPI, etc.)
+- Cloudflare Integration (add creds to VAPI)
+- Create custom connection to Amazon Bedrock (contact, etc.)
+- Local install of OpenEdX (dev)
+- Access to VPS server
+- Work on code/MVP
+
+Goals:
+- Use Custom LLM through Groq to lower latency (600ms --> 200ms)
+- Add MCP Tool for browsing the web
+- Note: rime-ai has the lowest latency and cost, test and fine-tune?
+- Contact VAPI directly for further optimizations, etc.?
+
+https://docs.vapi.ai/customization/custom-llm/using-your-server
+https://apps.ottomator.testbot.xyz/learner-dashboard/
+https://apps.ottomator.testbot.xyz/authoring/home
+https://stocktistics.com/stocksaavy
+https://www.indeed.com/career-advice/career-development/types-of-reasoning
+https://www.indeed.com/career-advice/finding-a-job/what-is-project-management
+https://workers.cloudflare.com/built-with/collections/durable-objects/
+
+"Using abductive reasoning..." system prompt?
+
+
+Latency Research
+
+***Amazon: Nova Pro 1.0
+Amazon Bedrock @ ~70ms???
+
+https://openrouter.ai
+
+qwen/qwen-turbo		640ms
+
+Together AI ~290ms?
+Mistral ~250ms
+
+qwen/qwen-2.5-7b-instruct
+DeepInfra ~70ms???
+
+deepseek/deepseek-chat
+DeepInfra @ ~120ms
+
+Llama 3.3 70B SpecDec 8k	1600	$0.59	$0.99
+
+Service Quota increases and dedicated "Model Units" which can further improve latency.
+
+tom@ottomator.ai
+
+
+Hello, I am Alice! I will be your instructor. How can I help?
