@@ -33,13 +33,47 @@ Goals:
 - Note: rime-ai has the lowest latency and cost, test and fine-tune?
 - Contact VAPI directly for further optimizations, etc.?
 
-https://docs.vapi.ai/customization/custom-llm/using-your-server
+Videos:
+https://www.loom.com/share/fba41fbaa19d4ddcaf2c6202cf3def14?sid=d80dd9af-3261-4eab-b075-ff331124669d
+https://www.youtube.com/watch?v=-1xWhYmOT0A
+https://www.youtube.com/watch?v=U8K5WIVQtkY
+
+Xblock Examples:
+https://github.com/abconlinecourses/chatgpt-xblock
+https://github.com/proversity-org/edx-xblock-bibblio
+https://pypi.org/project/chatgpt-block/#files
+
+References:
+https://openedx.org/the-platform/extensions-directory/
+https://app.rime.ai/?code=2842778f-b364-4c58-9231-c9858e807ab3&to=%2F
 https://apps.ottomator.testbot.xyz/learner-dashboard/
 https://apps.ottomator.testbot.xyz/authoring/home
+https://workers.cloudflare.com/built-with/collections/durable-objects/
 https://stocktistics.com/stocksaavy
+https://github.com/ggml-org/llama.cpp/pull/12648
+
+Docs:
+https://docs.vapi.ai/customization/custom-llm/using-your-server
+https://docs.google.com/document/d/1IcLCaIX-4Wi6Iydf7KxgDEVRojiYJtdzSLe-oQiKeo4/edit?tab=t.c43yrfetsmmm#heading=h.a527lqkgkmh8
+
+Articles:
+https://www.mxmoritz.com/article/transcript-formatting-prompt
+https://openedx.org/blog/ai-driven-course-creation-crafting-engaging-content-in-the-open-edx-lms-with-llm/
+https://press.edx.org/edx-debuts-two-ai-powered-learning-assistants-built-on-chatgpt
 https://www.indeed.com/career-advice/career-development/types-of-reasoning
 https://www.indeed.com/career-advice/finding-a-job/what-is-project-management
-https://workers.cloudflare.com/built-with/collections/durable-objects/
+https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html
+https://mainfunc.ai/blog/genspark_super_agent
+https://aws.amazon.com/ai/generative-ai/nova/
+
+Services:
+https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/text-generation-playground
+https://us-east-2.console.aws.amazon.com/apigateway/main/apis?region=us-east-2#
+https://www.digitalocean.com/products/droplets
+https://deepgram.com/pricing
+https://actions.zapier.com/settings/mcp/
+https://deepinfra.com/dash/api_keys
+https://deepinfra.com/models
 
 "Using abductive reasoning..." system prompt?
 
