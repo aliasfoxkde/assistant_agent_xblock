@@ -150,7 +150,9 @@ class VoiceAssistanceXBlock(StudioEditableXBlockMixin, XBlock):
             'api_key': self.api_key,
             'assistant_id': self.assistant_id,
             'user_settings': self.user_settings,
-            'conversation_history': self.conversation_history
+            'conversation_history': self.conversation_history,
+            'button_color': self.button_color,
+            'button_position': self.button_position
         })
 
         return frag
@@ -159,7 +161,44 @@ class VoiceAssistanceXBlock(StudioEditableXBlockMixin, XBlock):
         """
         Return the studio view.
         """
-        return super(VoiceAssistanceXBlock, self).studio_view(context)
+        # Load the HTML template
+        html = self.resource_string("static/html/voice_assistance_edit.html")
+
+        # Define helper functions for the template
+        def button_position_selected(position):
+            return "selected" if self.button_position == position else ""
+
+        def voice_id_selected(voice_id):
+            return "selected" if self.voice_id == voice_id else ""
+
+        # Add helper functions to self for use in the template
+        self.button_position_selected = button_position_selected
+        self.voice_id_selected = voice_id_selected
+
+        # Create and return fragment
+        frag = Fragment(html.format(self=self))
+
+        # Add JavaScript for the studio view
+        js_str = self.resource_string("static/js/src/voice_assistance_edit.js")
+        frag.add_javascript(js_str)
+        frag.initialize_js('VoiceAssistanceXBlockEdit')
+
+        return frag
+
+    @XBlock.json_handler
+    def studio_submit(self, data, suffix=''):
+        """
+        Called when submitting the form in Studio.
+        """
+        self.display_name = data.get('display_name', self.display_name)
+        self.api_key = data.get('api_key', self.api_key)
+        self.assistant_id = data.get('assistant_id', self.assistant_id)
+        self.button_color = data.get('button_color', self.button_color)
+        self.button_position = data.get('button_position', self.button_position)
+        self.voice_id = data.get('voice_id', self.voice_id)
+        self.speaking_rate = float(data.get('speaking_rate', self.speaking_rate))
+
+        return {'result': 'success'}
 
     @XBlock.json_handler
     def send_message(self, data, suffix=''):

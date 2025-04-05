@@ -2,8 +2,9 @@
 
 /* Container for the entire component */
 .voice-assistant-container {
-    position: relative;
+    position: static;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 9999;
 }
 
 /* Floating button styles */
@@ -21,7 +22,7 @@
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 9999;
     transition: all 0.3s ease;
 }
 

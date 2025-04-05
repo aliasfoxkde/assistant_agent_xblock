@@ -49,6 +49,10 @@ function VoiceAssistanceXBlock(runtime, element, initArgs) {
 
     // Initialize the component
     function init() {
+        console.log('Initializing Voice Assistant XBlock');
+        console.log('Container:', container.length ? 'Found' : 'Not found');
+        console.log('Floating button:', floatingButton.length ? 'Found' : 'Not found');
+
         // Set initial values for settings
         voiceSelect.val(userSettings.voice_id);
         speakingRateInput.val(userSettings.speaking_rate);
@@ -62,6 +66,35 @@ function VoiceAssistanceXBlock(runtime, element, initArgs) {
 
         // Set up event listeners
         setupEventListeners();
+
+        // Force the button to be visible and position it correctly
+        var buttonPosition = initArgs.button_position || 'bottom-right';
+        var positionCSS = {
+            'display': 'flex',
+            'position': 'fixed',
+            'z-index': '9999'
+        };
+
+        // Set position based on button_position
+        if (buttonPosition === 'bottom-right') {
+            positionCSS.bottom = '20px';
+            positionCSS.right = '20px';
+        } else if (buttonPosition === 'bottom-left') {
+            positionCSS.bottom = '20px';
+            positionCSS.left = '20px';
+        } else if (buttonPosition === 'top-right') {
+            positionCSS.top = '20px';
+            positionCSS.right = '20px';
+        } else if (buttonPosition === 'top-left') {
+            positionCSS.top = '20px';
+            positionCSS.left = '20px';
+        }
+
+        // Set button color
+        var buttonColor = initArgs.button_color || '#4CAF50';
+        positionCSS.backgroundColor = buttonColor;
+
+        floatingButton.css(positionCSS);
     }
 
     // Set up event listeners

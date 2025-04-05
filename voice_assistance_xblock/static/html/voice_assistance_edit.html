@@ -1,0 +1,83 @@
+<div class="editor-with-buttons">
+    <div class="wrapper-comp-settings is-active editor-with-buttons" id="settings-tab">
+        <ul class="list-input settings-list">
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="display_name">Display Name</label>
+                    <input class="input setting-input" name="display_name" id="display_name" value="{self.display_name}" type="text" />
+                </div>
+                <span class="tip setting-help">The name that appears in the course ribbon</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="api_key">VAPI API Key</label>
+                    <input class="input setting-input" name="api_key" id="api_key" value="{self.api_key}" type="text" />
+                </div>
+                <span class="tip setting-help">Your VAPI.ai API key</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="assistant_id">VAPI Assistant ID</label>
+                    <input class="input setting-input" name="assistant_id" id="assistant_id" value="{self.assistant_id}" type="text" />
+                </div>
+                <span class="tip setting-help">Your VAPI.ai Assistant ID</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="button_color">Button Color</label>
+                    <input class="input setting-input" name="button_color" id="button_color" value="{self.button_color}" type="color" />
+                </div>
+                <span class="tip setting-help">Color of the floating button</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="button_position">Button Position</label>
+                    <select class="input setting-input" name="button_position" id="button_position">
+                        <option value="bottom-right" {self.button_position_selected('bottom-right')}>Bottom Right</option>
+                        <option value="bottom-left" {self.button_position_selected('bottom-left')}>Bottom Left</option>
+                        <option value="top-right" {self.button_position_selected('top-right')}>Top Right</option>
+                        <option value="top-left" {self.button_position_selected('top-left')}>Top Left</option>
+                    </select>
+                </div>
+                <span class="tip setting-help">Position of the floating button</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="voice_id">Default Voice</label>
+                    <select class="input setting-input" name="voice_id" id="voice_id">
+                        <option value="alloy" {self.voice_id_selected('alloy')}>Alloy (Balanced)</option>
+                        <option value="echo" {self.voice_id_selected('echo')}>Echo (Deeper tone)</option>
+                        <option value="fable" {self.voice_id_selected('fable')}>Fable (Soft-spoken)</option>
+                        <option value="onyx" {self.voice_id_selected('onyx')}>Onyx (Clear, precise)</option>
+                        <option value="nova" {self.voice_id_selected('nova')}>Nova (Professional)</option>
+                    </select>
+                </div>
+                <span class="tip setting-help">Default voice for the assistant</span>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+                <div class="wrapper-comp-setting">
+                    <label class="label setting-label" for="speaking_rate">Speaking Rate</label>
+                    <input class="input setting-input" name="speaking_rate" id="speaking_rate" value="{self.speaking_rate}" type="range" min="0.5" max="2.0" step="0.1" />
+                    <span id="speaking_rate_value">{self.speaking_rate}</span>
+                </div>
+                <span class="tip setting-help">Speed at which the assistant speaks (0.5 to 2.0)</span>
+            </li>
+        </ul>
+    </div>
+    <div class="xblock-actions">
+        <ul>
+            <li class="action-item">
+                <a href="#" class="button action-primary save-button">Save</a>
+            </li>
+            <li class="action-item">
+                <a href="#" class="button cancel-button">Cancel</a>
+            </li>
+        </ul>
+    </div>
+</div>
