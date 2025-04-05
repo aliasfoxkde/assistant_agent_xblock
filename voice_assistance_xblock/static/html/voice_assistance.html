@@ -1,7 +1,7 @@
 <div class="voice-assistant-container" id="voice-assistant-container">
     <!-- Main floating button -->
     <div class="voice-assistant-button" id="voice-assistant-button" aria-label="Voice Assistant" style="background-color: {button_color};">
-        <i class="fa fa-microphone" aria-hidden="true"></i>
+        <img src="{self.runtime.local_resource_url(self, 'static/img/voice_icon.svg')}" alt="Voice Assistant" width="24" height="24">
     </div>
 
     <!-- Expandable panel -->
@@ -10,13 +10,13 @@
             <div class="panel-title">AI Assistant</div>
             <div class="panel-controls">
                 <button id="feedback-button" aria-label="Provide Feedback">
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                    <img src="{self.runtime.local_resource_url(self, 'static/img/feedback_icon.svg')}" alt="Feedback" width="18" height="18">
                 </button>
                 <button id="history-button" aria-label="Conversation History">
-                    <i class="fa fa-history" aria-hidden="true"></i>
+                    <img src="{self.runtime.local_resource_url(self, 'static/img/history_icon.svg')}" alt="History" width="18" height="18">
                 </button>
                 <button id="settings-button" aria-label="Settings">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <img src="{self.runtime.local_resource_url(self, 'static/img/settings_icon.svg')}" alt="Settings" width="18" height="18">
                 </button>
                 <button id="minimize-button" aria-label="Minimize">
                     <i class="fa fa-minus" aria-hidden="true"></i>

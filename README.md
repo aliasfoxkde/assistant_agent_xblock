@@ -19,6 +19,10 @@ A context-aware and interactive voice assistant integration for OpenEdX using VA
 - [Planning Documentation](docs/PLANNING.md) - Design methodology and development approach
 - [Project Structure](docs/STRUCTURE.md) - Code organization and architecture
 - [Task Breakdown](docs/TASKS.md) - Implementation tasks and progress tracking
+- [Tutor Integration](docs/TUTOR_INTEGRATION.md) - Detailed guide for Tutor installation
+- [VAPI Integration](docs/VAPI_INTEGRATION.md) - Information about the VAPI.ai integration
+- [Changelog](docs/CHANGELOG.md) - Detailed version history and changes
+- [Version History](docs/HISTORY.md) - Development timeline and release notes
 
 ## Purpose
 
@@ -26,15 +30,45 @@ This xBlock provides a floating, context-aware voice assistant to help learners 
 
 ## Quick Start
 
+### Standard Installation
 1. Install the package:
 ```bash
-pip install -e git+https://github.com/yourusername/voice_assistance_xblock.git#egg=voice_assistance_xblock
+pip install -e git+https://github.com/aliasfoxkde/assistant_agent_xblock.git#egg=assistant_agent_xblock
 ```
 
 2. Add to your advanced settings in Studio:
-```"advanced_modules": ["voice_assistance"]```
+```json
+{
+  "advanced_modules": ["voice_assistance"]
+}
+```
 
 3. Add the component to your course and configure API keys.
+
+### Tutor Installation
+
+1. Add the package to your Tutor configuration:
+```bash
+tutor config save --append OPENEDX_EXTRA_PIP_REQUIREMENTS="git+https://github.com/aliasfoxkde/assistant_agent_xblock.git@main"
+```
+
+2. Rebuild the OpenEdX image:
+```bash
+tutor images build openedx
+```
+
+3. Restart your Tutor instance:
+```bash
+tutor local stop
+tutor local start -d
+```
+
+4. Add to your advanced settings in Studio:
+```json
+{
+  "advanced_modules": ["voice_assistance"]
+}
+```
 
 ## Requirements
 * OpenEdX version: Maple or later

@@ -1,8 +1,32 @@
 """Setup for chatgptxblock XBlock."""
 
 import os
+import re
 
 from setuptools import setup
+
+
+def load_requirements(*requirements_paths):
+    """
+    Load all requirements from the specified files.
+    Returns a list of requirement strings.
+    """
+    requirements = set()
+    for path in requirements_paths:
+        with open(path) as reqs:
+            requirements.update(
+                line.split('#')[0].strip() for line in reqs
+                if is_requirement(line.strip())
+            )
+    return list(requirements)
+
+
+def is_requirement(line):
+    """
+    Return True if the requirement line is a package requirement.
+    Returns False for comments, blank lines, etc.
+    """
+    return line and not line.startswith(('-r', '#', '-e', 'git+', '-c'))
 
 
 def package_data(pkg, roots):
@@ -23,26 +47,37 @@ def package_data(pkg, roots):
 
 setup(
     name='assistant_agent_xblock',
-    version='0.1.0',
-    description='Assistant Agent xBlock',
+    version='0.1.1',
+    description='Assistant Agent xBlock with VAPI.ai integration',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    url='https://github.com/aliasfoxkde/assistant_agent_xblock',
     license='AGPL-3.0',
     author='Micheal L C Kinney III',
     author_email='Micheal.L.C.Kinney@gmail.com',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Framework :: Django',
+        'Intended Audience :: Education',
+        'License :: OSI Approved :: GNU Affero General Public License v3',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Topic :: Education',
+    ],
     packages=[
         'chatgptxblock',
         'voice_assistance_xblock',
     ],
-    install_requires=[
-        'XBlock',
-        'openai',
-        'xblock-utils',
-        'requests'
-    ],
+    install_requires=load_requirements('requirements.txt'),
     entry_points={
         'xblock.v1': [
             'chatgptxblock = chatgptxblock:ChatgptXBlock',
             'voice_assistance = voice_assistance_xblock:VoiceAssistanceXBlock',
         ]
     },
-    package_data={**package_data("chatgptxblock", ["static", "public"]), **package_data("voice_assistance_xblock", ["static", "public"])},
+    package_data={
+        'chatgptxblock': package_data("chatgptxblock", ["static", "public"])["chatgptxblock"],
+        'voice_assistance_xblock': package_data("voice_assistance_xblock", ["static", "public"])["voice_assistance_xblock"],
+    },
+    include_package_data=True,
 )

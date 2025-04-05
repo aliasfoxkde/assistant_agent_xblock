@@ -1,0 +1,4 @@
+include README.md
+include requirements.txt
+recursive-include voice_assistance_xblock/static *
+recursive-include voice_assistance_xblock/public *

@@ -2,11 +2,11 @@
 This document outlines the tasks required to implement the Voice Assistance xBlock, organized by phase, scope, and category.
 
 ## Improvements
-- [ ] Add ability for user to rate the tool (vote up/down & feedback)
+- [x] Add ability for user to rate the tool (vote up/down & feedback)
 - [ ] Add support for user push notifications
 - [ ] Add message count (red round with number) to floating chat/voice icon
-- [ ] Incorperate Thumbs UP/DOWN on conversations, Voice Settings, Feedback Buttons, etc.
-- [ ] Buttons: Play (Text Chat), Microphone (Voice/Dictate), Feedback, Settings
+- [x] Incorporate Thumbs UP/DOWN on conversations, Voice Settings, Feedback Buttons, etc.
+- [x] Buttons: Play (Text Chat), Microphone (Voice/Dictate), Feedback, Settings
       Speech-to-text Writer Feature to dictate?
 
 ## Phase 1: Foundation
@@ -22,17 +22,17 @@ This document outlines the tasks required to implement the Voice Assistance xBlo
 ### UI/UX Base Components
 - [x] Design floating button component
 - [x] Implement expandable chat interface
-- [ ] Create basic voice recording functionality
-- [ ] Implement text input and response display
-- [ ] Design initial settings panel
-- [ ] Create basic style framework
+- [x] Create basic voice recording functionality
+- [x] Implement text input and response display
+- [x] Design initial settings panel
+- [x] Create basic style framework
 
 ### Integration
-- [ ] Set up authentication with VAPI.ai
-- [ ] Implement basic TTS functionality
-- [ ] Develop simple STT capability
+- [x] Set up authentication with VAPI.ai
+- [x] Implement basic TTS functionality
+- [x] Develop simple STT capability
 - [ ] Create course navigation hooks
-- [ ] Implement basic user identification
+- [x] Implement basic user identification
 
 ## Phase 2: Enhanced Features (Weeks 3-4)
 
@@ -44,15 +44,15 @@ This document outlines the tasks required to implement the Voice Assistance xBlo
 - [ ] Create adaptive prompting system
 
 ### Voice Customization
-- [ ] Implement voice selection interface
-- [ ] Create speed adjustment controls
-- [ ] Develop language selection
-- [ ] Design volume controls
+- [x] Implement voice selection interface
+- [x] Create speed adjustment controls
+- [x] Develop language selection
+- [x] Design volume controls
 - [ ] Create accent preferences
 
 ### History Management
-- [ ] Implement conversation storage
-- [ ] Create history browsing interface
+- [x] Implement conversation storage
+- [x] Create history browsing interface
 - [ ] Develop conversation search
 - [ ] Build export functionality
 - [ ] Implement deletion and privacy controls
@@ -113,8 +113,8 @@ This document outlines the tasks required to implement the Voice Assistance xBlo
 - [ ] Create automated regression tests
 
 ### User Feedback Integration
-- [ ] Set up feedback collection mechanism
+- [x] Set up feedback collection mechanism
 - [ ] Create prioritization framework
-- [ ] Develop feedback categorization
+- [x] Develop feedback categorization
 - [ ] Implement rapid iteration process
 - [ ] Design A/B testing framework

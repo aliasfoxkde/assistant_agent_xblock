@@ -49,14 +49,17 @@ The implementation follows Agile methodology with:
    - Course navigation hooks
    - User progress tracking
    - Authentication integration
+   - Tutor deployment compatibility
 2. **VAPI.ai API**:
    - Speech-to-text processing
    - Text-to-speech generation
    - Dialog management
+   - API key and Assistant ID configuration
 3. **UI/UX Integration**:
-   - Floating interface
-   - Responsive design
+   - Floating interface with custom icons
+   - Responsive design for all screen sizes
    - Accessibility compliance
+   - Feedback collection mechanism
 
 ### Project Phases
 1. **MVP (Minimum Viable Product)**:
@@ -103,4 +106,6 @@ Prioritized these voice settings based on user research:
 | Browser compatibility | Medium | Low | Test across major browsers and versions |
 | User adoption | High | Medium | Provide clear onboarding and tooltips |
 | Performance impact | Medium | Medium | Optimize asset loading and background processing |
+| Tutor build issues | High | Medium | Ensure proper package structure and dependencies |
+| Icon compatibility | Low | Low | Use SVG icons with fallbacks for older browsers |
 
