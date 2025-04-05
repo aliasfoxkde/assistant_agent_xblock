@@ -30,15 +30,19 @@ setup(
     author_email='Micheal.L.C.Kinney@gmail.com',
     packages=[
         'chatgptxblock',
+        'voice_assistance_xblock',
     ],
     install_requires=[
         'XBlock',
-        'openai'
+        'openai',
+        'xblock-utils',
+        'requests'
     ],
     entry_points={
         'xblock.v1': [
             'chatgptxblock = chatgptxblock:ChatgptXBlock',
+            'voice_assistance = voice_assistance_xblock:VoiceAssistanceXBlock',
         ]
     },
-    package_data=package_data("chatgptxblock", ["static", "public"]),
+    package_data={**package_data("chatgptxblock", ["static", "public"]), **package_data("voice_assistance_xblock", ["static", "public"])},
 )

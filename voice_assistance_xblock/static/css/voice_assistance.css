@@ -1,0 +1,478 @@
+/* Voice Assistance XBlock CSS */
+
+/* Container for the entire component */
+.voice-assistant-container {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Floating button styles */
+.voice-assistant-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.voice-assistant-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.voice-assistant-button i {
+    font-size: 24px;
+}
+
+/* Chat panel styles */
+.voice-assistant-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.voice-assistant-panel.expanded {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* Panel header */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.panel-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.panel-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.panel-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6c757d;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.panel-controls button:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+/* Conversation area */
+.conversation-area {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.welcome-message h3 {
+    margin-bottom: 10px;
+    color: #212529;
+}
+
+.welcome-message p {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Message bubbles */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.assistant-message {
+    align-self: flex-start;
+    background-color: #f1f3f5;
+    color: #212529;
+    border-bottom-left-radius: 5px;
+}
+
+.message-time {
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+}
+
+.text-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.text-input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.voice-recording-button, .send-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.2s;
+}
+
+.voice-recording-button:hover, .send-button:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.voice-recording-button.recording {
+    background-color: #dc3545;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Settings panel */
+.settings-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 998;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.settings-panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.settings-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.settings-group {
+    margin-bottom: 20px;
+}
+
+.settings-group h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #212529;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+.settings-item {
+    margin-bottom: 15px;
+}
+
+.settings-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.settings-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.settings-value {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.settings-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.primary-button, .secondary-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.primary-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.primary-button:hover {
+    background-color: #0069d9;
+}
+
+.secondary-button {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #ced4da;
+}
+
+.secondary-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .voice-assistant-panel, .settings-panel {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+    }
+
+    .voice-assistant-button {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+/* Animation for messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Feedback dialog */
+.feedback-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.feedback-dialog h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #212529;
+}
+
+.feedback-dialog p {
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.rating-button {
+    background: none;
+    border: 1px solid #ced4da;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.rating-button:hover, .rating-button.selected {
+    background-color: #f8f9fa;
+    transform: scale(1.1);
+}
+
+.rating-button.selected {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.feedback-dialog textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    resize: none;
+}
+
+.feedback-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.feedback-actions button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-feedback {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #6c757d;
+}
+
+.submit-feedback {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+/* Loading indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f1f3f5;
+    border-radius: 18px;
+    border-bottom-left-radius: 5px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: typing 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

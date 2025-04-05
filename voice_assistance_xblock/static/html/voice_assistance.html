@@ -1,0 +1,104 @@
+<div class="voice-assistant-container" id="voice-assistant-container">
+    <!-- Main floating button -->
+    <div class="voice-assistant-button" id="voice-assistant-button" aria-label="Voice Assistant" style="background-color: {button_color};">
+        <i class="fa fa-microphone" aria-hidden="true"></i>
+    </div>
+
+    <!-- Expandable panel -->
+    <div class="voice-assistant-panel" id="voice-assistant-panel">
+        <div class="panel-header">
+            <div class="panel-title">AI Assistant</div>
+            <div class="panel-controls">
+                <button id="feedback-button" aria-label="Provide Feedback">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                </button>
+                <button id="history-button" aria-label="Conversation History">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                </button>
+                <button id="settings-button" aria-label="Settings">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </button>
+                <button id="minimize-button" aria-label="Minimize">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="conversation-area" id="conversation-area">
+            <div class="welcome-message">
+                <h3>How can I help you today?</h3>
+                <p>You can ask me questions about course content, get learning assistance, or help navigating the platform.</p>
+            </div>
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+
+        <div class="input-area">
+            <input type="text" class="text-input" id="text-input" placeholder="Type your message...">
+            <button class="voice-recording-button" id="voice-recording-button" aria-label="Record Voice">
+                <i class="fa fa-microphone" aria-hidden="true"></i>
+            </button>
+            <button class="send-button" id="send-button" aria-label="Send Message">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings panel (hidden by default) -->
+    <div class="settings-panel" id="settings-panel">
+        <div class="panel-header">
+            <div class="panel-title">Settings</div>
+            <button id="close-settings-button" aria-label="Close Settings">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-group">
+                <h3>Voice Options</h3>
+
+                <div class="settings-item">
+                    <label class="settings-label" for="voice-select">Assistant Voice</label>
+                    <select id="voice-select" class="settings-select">
+                        <option value="alloy">Alloy (Balanced)</option>
+                        <option value="echo">Echo (Deeper tone)</option>
+                        <option value="fable">Fable (Soft-spoken)</option>
+                        <option value="onyx">Onyx (Clear, precise)</option>
+                        <option value="nova">Nova (Professional)</option>
+                    </select>
+                </div>
+
+                <div class="settings-item">
+                    <label class="settings-label" for="speaking-rate">Speaking Rate</label>
+                    <input type="range" id="speaking-rate" min="0.5" max="2.0" step="0.1" value="1.0">
+                    <span class="settings-value" id="speaking-rate-value">1.0</span>
+                </div>
+
+                <div class="settings-item">
+                    <label class="settings-label" for="volume">Volume</label>
+                    <input type="range" id="volume" min="0.1" max="1.0" step="0.1" value="1.0">
+                    <span class="settings-value" id="volume-value">1.0</span>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h3>Interface Options</h3>
+
+                <div class="settings-item">
+                    <label class="settings-label" for="language-select">Language</label>
+                    <select id="language-select" class="settings-select">
+                        <option value="en-US">English (US)</option>
+                        <option value="en-GB">English (UK)</option>
+                        <option value="es-ES">Spanish</option>
+                        <option value="fr-FR">French</option>
+                        <option value="de-DE">German</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button id="save-settings-button" class="primary-button">Save Settings</button>
+                <button id="reset-settings-button" class="secondary-button">Reset to Default</button>
+            </div>
+        </div>
+    </div>
+</div>
