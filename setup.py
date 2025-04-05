@@ -1,4 +1,4 @@
-"""Setup for chatgptxblock XBlock."""
+"""Setup for Voice Assistance XBlock."""
 
 import os
 import re
@@ -65,19 +65,14 @@ setup(
         'Topic :: Education',
     ],
     packages=[
-        'chatgptxblock',
         'voice_assistance_xblock',
     ],
     install_requires=load_requirements('requirements.txt'),
     entry_points={
         'xblock.v1': [
-            'chatgptxblock = chatgptxblock:ChatgptXBlock',
             'voice_assistance = voice_assistance_xblock:VoiceAssistanceXBlock',
         ]
     },
-    package_data={
-        'chatgptxblock': package_data("chatgptxblock", ["static", "public"])["chatgptxblock"],
-        'voice_assistance_xblock': package_data("voice_assistance_xblock", ["static", "public"])["voice_assistance_xblock"],
-    },
+    package_data=package_data("voice_assistance_xblock", ["static", "public"]),
     include_package_data=True,
 )
